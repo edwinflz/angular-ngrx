@@ -1,0 +1,21 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{ film.title }}
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="media-content">
+      <p class="title is-4">{{ film.director }}</p>
+      <p class="subtitle is-6">Episodio: #{{ film.episode_id }}</p>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <button
+      class="button is-success is-light is-fullwidth"
+      (click)="getFilmId(film.url)"
+    >
+      Ver personajes
+    </button>
+  </footer>
+</div>

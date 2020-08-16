@@ -1,0 +1,21 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand container">
+    <a class="navbar-item" [routerLink]="['/films']" routerLinkActive="active">
+      Peliculas
+    </a>
+
+    <a
+      class="navbar-item"
+      [routerLink]="['/characters']"
+      routerLinkActive="active"
+    >
+      Personajes
+    </a>
+  </div>
+</nav>
+
+<section class="section mt-2">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</section>

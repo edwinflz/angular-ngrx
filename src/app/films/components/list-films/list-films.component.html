@@ -1,0 +1,5 @@
+<div class="columns mt-2 is-desktop" style="flex-wrap: wrap;">
+  <div class="column is-one-third" *ngFor="let film of films; let i = index">
+    <app-film [film]="film"></app-film>
+  </div>
+</div>

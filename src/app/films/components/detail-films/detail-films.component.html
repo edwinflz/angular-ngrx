@@ -1,0 +1,24 @@
+<div class="hero" *ngIf="film$ | async as film">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        {{ film.title }}
+      </h1>
+      <h2 class="subtitle">Episodio: #{{ film.episode_id }}</h2>
+      <h2 class="subtitle">Personajes:</h2>
+    </div>
+  </div>
+</div>
+
+<div class="columns mt-2 is-desktop" style="flex-wrap: wrap;">
+  <div
+    class="column is-one-third"
+    *ngFor="let character of characters; let index = index"
+  >
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">{{ index + 1 }}.) {{ character.name }}</p>
+      </header>
+    </div>
+  </div>
+</div>
