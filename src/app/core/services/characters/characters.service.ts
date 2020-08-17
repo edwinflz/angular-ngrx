@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 
 import { environment } from '../../../../environments/environment.prod';
 import { ListCharacters } from '@core/models/list-characters.interface';
+import { Film } from '@core/models/film.interface';
 
 
 @Injectable({
@@ -14,15 +15,18 @@ import { ListCharacters } from '@core/models/list-characters.interface';
 })
 export class CharactersService {
 
-  private url = `${environment.url_api}/films`;
+  private url = `${environment.url_api}/people`;
 
   constructor(private http: HttpClient) { }
 
-  getAllCharacters(): Observable<ListCharacters[]> {
-    return this.http.get(`${this.url}`)
-      .pipe(
-        map((response: any) => response.results as ListCharacters[])
-      );
+  getAllCharacters(page: number): Observable<any> {
+    return this.http.get(`${this.url}/?page=${page}`);
+  }
+
+  getFilmsByCharacter(url: string): Observable<Film> {
+    return this.http.get(url).pipe(
+      map((response: any) => response as Film)
+    );
   }
 
 }

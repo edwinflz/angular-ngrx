@@ -1,0 +1,22 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{ character.name }}
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="media-content">
+      <p class="title is-4">Color de Ojos: {{ character.eye_color }}</p>
+      <p class="subtitle is-6">Genero: {{ character.gender }}</p>
+      <p *ngFor="let film of nameFilms">
+          {{film.title}}
+      </p>
+    </div>
+  </div>
+  <button
+      class="button is-success is-light is-fullwidth"
+      (click)="fetchFilmsByCharacter(character.films)"
+    >
+      Ver peliculas
+    </button>
+</div>

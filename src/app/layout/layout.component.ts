@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-
+  
+  logo = 'assets/img/logo.svg';
   constructor() { }
 
   ngOnInit(): void {

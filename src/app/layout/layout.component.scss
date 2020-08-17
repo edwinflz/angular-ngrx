@@ -1,0 +1,40 @@
+.navbar {
+  width: 100%;
+  padding: 0.5rem 0;
+  background-color: #1c3643;
+}
+
+.navbar__content {
+  display: flex;
+  align-items: center;
+  .navbar__item {
+    margin-left: 1rem;
+    color: #ffffff;
+    padding: 0.5rem;
+    transition: all 0.8s;
+    &:hover {
+      background-color: #226e97;
+      border-radius: 0.8rem;
+    }
+  }
+}
+
+.active {
+  background-color: #226e97;
+  border-radius: 0.8rem;
+}
+
+.navbar__brand {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  &-logo {
+    margin-right: 0.5rem;
+  }
+}

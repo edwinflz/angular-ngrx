@@ -1,5 +1,25 @@
-<div class="columns mt-2 is-desktop" style="flex-wrap: wrap;">
-  <div class="column is-one-third" *ngFor="let film of films; let i = index">
+<div
+  class="columns mt-2 is-desktop"
+  style="flex-wrap: wrap;"
+  *ngIf="!isLoading"
+>
+  <div
+    class="column is-one-third"
+    *ngFor="let film of films | orderingByEpisode; let i = index"
+  >
     <app-film [film]="film"></app-film>
+  </div>
+</div>
+
+<div class="columns mt-2 is-desktop" *ngIf="isLoading">
+  <div class="column is-12">
+    <h1>Cargando peliculas...</h1>
+  </div>
+</div>
+
+<div class="columns mt-2 is-desktop" *ngIf="error">
+  <div class="column is-12">
+    <h1>Error...</h1>
+    <p>{{ error | json }}</p>
   </div>
 </div>
